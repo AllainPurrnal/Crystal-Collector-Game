@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
-    <!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
-	<!-- <link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/reset.css"> -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
@@ -35,7 +35,7 @@
     <div class="winsLosses">
         <h3>
             Wins: <span id="userWins"></span>
-            Losses: <span id="userLooses"></span>
+            Losses: <span id="userLosses"></span>
         </h3>
     </div>
 
@@ -51,89 +51,6 @@
             Your total score is: <span id="finalTotal"></span>
         </h3>
     </div>
-
-    <script>
-    
-        
-        var rupeeAmount = [];
-        var userTotal = 0;
-        var cpuNum = 0;
-        var wins = 0;
-        var losses = 0;
-
-        for (var i = 0; i < 4; i++) {
-            var randomNum = Math.floor(Math.random() * 12) + 1;
-            rupeeAmount[i] = randomNum;
-            
-            console.log(rupeeAmount[i]);
-            
-        }
-
-        function numToGet() {
-            cpuNum = Math.floor(Math.random() * 101) + 19;
-            $("#randomNum").append(cpuNum);
-
-            console.log(cpuNum + " is the Number to get!");
-        }
-
-        $("#greenRupee").on("click", function() {
-            var green = rupeeAmount[0];
-            userTotal += green;
-
-            $("#finalTotal").text(userTotal);
-
-            console.log("Green Rupee!")
-            console.log(userTotal);
-            
-        });
-
-        $("#blueRupee").on("click", function() {
-            var blue = rupeeAmount[1];
-            userTotal += blue;
-
-            $("#finalTotal").text(userTotal);
-            
-            console.log("Blue Rupee!")
-            console.log(userTotal);
-            
-        });
-
-        $("#redRupee").on("click", function() {
-            var red = rupeeAmount[2];
-            userTotal += red;
-
-            $("#finalTotal").text(userTotal);
-
-            console.log("Red Rupee!")
-            console.log(userTotal);
-            
-        });
-
-        $("#purpleRupee").on("click", function() {
-            var purple = rupeeAmount[3];
-            userTotal += purple;
-
-            $("#finalTotal").text(userTotal);
-
-            console.log("Purple Rupee!")
-            console.log(userTotal);
-            
-        });
-
-        // function numChecker() {
-        //     if (cpuNum > userTotal) {
-        //         losses++;
-        //         $("#userLooses").text(losses);
-        //     } else if (cpuNum === userTotal) {
-        //         wins++;
-        //         $("#userWins").text(wins);
-        //     }
-        // }
-
-        numToGet();
-        // numChecker();
-
-    </script>
 
 	<script type="text/javascript" src="javascript/game.js"></script>
 </body>
