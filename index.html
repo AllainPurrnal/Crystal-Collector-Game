@@ -26,16 +26,16 @@
         <p>Each time when the game starts, the game will change the values of each crystal.</p>
     </div>
 
-    <div class="numberToGuess">
+    <div class="numberToGet">
         <h2>
-            ???<span id="randomNum"></span>
+            <span id="randomNum"></span>
         </h2>
     </div>
 
     <div class="winsLosses">
         <h3>
             Wins: <span id="userWins"></span>
-            Losses: <span id="userLosses"></span>
+            Losses: <span id="userLooses"></span>
         </h3>
     </div>
 
@@ -46,7 +46,7 @@
         <button id="purpleRupee"> <img src="images/purple.png" class=rupeePic alt="Purple Rupee"> </button>
     </div>
 
-    <div class="userTotal">
+    <div class="myTotal">
         <h3>
             Your total score is: <span id="finalTotal"></span>
         </h3>
@@ -54,15 +54,84 @@
 
     <script>
     
-        var randomNum = Math.floor(Math.random() * 12) + 1;
-        var rupeeAmount = ["", "", "", ""];
+        
+        var rupeeAmount = [];
+        var userTotal = 0;
+        var cpuNum = 0;
+        var wins = 0;
+        var losses = 0;
+
+        for (var i = 0; i < 4; i++) {
+            var randomNum = Math.floor(Math.random() * 12) + 1;
+            rupeeAmount[i] = randomNum;
+            
+            console.log(rupeeAmount[i]);
+            
+        }
+
+        function numToGet() {
+            cpuNum = Math.floor(Math.random() * 101) + 19;
+            $("#randomNum").append(cpuNum);
+
+            console.log(cpuNum + " is the Number to get!");
+        }
 
         $("#greenRupee").on("click", function() {
+            var green = rupeeAmount[0];
+            userTotal += green;
 
+            $("#finalTotal").text(userTotal);
 
             console.log("Green Rupee!")
+            console.log(userTotal);
             
         });
+
+        $("#blueRupee").on("click", function() {
+            var blue = rupeeAmount[1];
+            userTotal += blue;
+
+            $("#finalTotal").text(userTotal);
+            
+            console.log("Blue Rupee!")
+            console.log(userTotal);
+            
+        });
+
+        $("#redRupee").on("click", function() {
+            var red = rupeeAmount[2];
+            userTotal += red;
+
+            $("#finalTotal").text(userTotal);
+
+            console.log("Red Rupee!")
+            console.log(userTotal);
+            
+        });
+
+        $("#purpleRupee").on("click", function() {
+            var purple = rupeeAmount[3];
+            userTotal += purple;
+
+            $("#finalTotal").text(userTotal);
+
+            console.log("Purple Rupee!")
+            console.log(userTotal);
+            
+        });
+
+        // function numChecker() {
+        //     if (cpuNum > userTotal) {
+        //         losses++;
+        //         $("#userLooses").text(losses);
+        //     } else if (cpuNum === userTotal) {
+        //         wins++;
+        //         $("#userWins").text(wins);
+        //     }
+        // }
+
+        numToGet();
+        // numChecker();
 
     </script>
 
