@@ -5,8 +5,12 @@
     <meta charset="UTF-8">
     <title>Crystal Collector</title>
 
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
 </head>
 
 <body>
@@ -36,10 +40,10 @@
     </div>
 
     <div class="rupees">
-        <img src="images/green.png" class=rupeePic alt="Green Rupee">
-        <img src="images/blue.png" class=rupeePic alt="Blue Rupee">
-        <img src="images/red.png" class=rupeePic alt="Red Rupee">
-        <img src="images/purple.png" class=rupeePic alt="Purple Rupee">
+        <button id="greenRupee"> <img src="images/green.png" class=rupeePic alt="Green Rupee"> </button>
+        <button id="blueRupee"> <img src="images/blue.png" class=rupeePic alt="Blue Rupee"> </button>
+        <button id="redRupee"> <img src="images/red.png" class=rupeePic alt="Red Rupee"> </button>
+        <button id="purpleRupee"> <img src="images/purple.png" class=rupeePic alt="Purple Rupee"> </button>
     </div>
 
     <div class="userTotal">
@@ -47,7 +51,20 @@
             Your total score is: <span id="finalTotal"></span>
         </h3>
     </div>
+
+    <script>
     
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.js"></script>
-	<script type="text/javascript" src="assets/javascript/javascript.js"></script>
+        var randomNum = Math.floor(Math.random() * 12) + 1;
+        var rupeeAmount = ["", "", "", ""];
+
+        $("#greenRupee").on("click", function() {
+
+
+            console.log("Green Rupee!")
+            
+        });
+
+    </script>
+
+	<script type="text/javascript" src="javascript/game.js"></script>
 </body>
